@@ -67,11 +67,11 @@ const Index = () => {
           
           <ScrollReveal delay={0.3}>
             <div className="flex items-center justify-center gap-3 mb-8">
-              <Link to="/projects" className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-all hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)]">
+              <Link to="/projects" className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-all hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] font-mono">
                 View My Work
                 <ArrowRight size={16} />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground text-sm font-medium rounded-lg hover:border-primary hover:text-primary transition-all">
+              <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground text-sm font-medium rounded-lg hover:border-primary hover:text-primary transition-all font-mono">
                 Get in Touch
               </Link>
             </div>
@@ -95,11 +95,11 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <ScrollReveal delay={0.1}>
-              <p className="text-3xl font-bold text-primary mb-1">6+</p>
+              <p className="text-3xl font-bold text-primary mb-1">6</p>
               <p className="text-muted-foreground text-xs">Projects Completed</p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <p className="text-3xl font-bold text-primary mb-1">8+</p>
+              <p className="text-3xl font-bold text-primary mb-1">8</p>
               <p className="text-muted-foreground text-xs">Technologies</p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
