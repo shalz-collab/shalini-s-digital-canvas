@@ -1,5 +1,7 @@
 import Layout from "@/components/Layout";
 import SkillBadge from "@/components/SkillBadge";
+import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const skills = [
   "HTML",
@@ -15,11 +17,12 @@ const skills = [
 const About = () => {
   return (
     <Layout>
+      <AnimatedBackground />
       <section className="py-20">
         <div className="container mx-auto px-6">
           {/* About Me */}
           <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
-            <div className="animate-fade-up">
+            <ScrollReveal>
               <h1 className="section-title">About Me</h1>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
@@ -38,67 +41,77 @@ const About = () => {
                   AI and healthcare with my upcoming project, PreCare.
                 </p>
               </div>
-            </div>
-            <div className="flex justify-center animate-float">
-              <div className="relative">
-                <div className="w-48 h-48 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
-                  <span className="text-8xl">👩‍💻</span>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2} direction="right">
+              <div className="flex justify-center">
+                <div className="relative">
+                  <div className="w-48 h-48 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
+                    <span className="text-8xl">👩‍💻</span>
+                  </div>
+                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse-glow" />
+                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-primary/60 rounded-full" />
+                  <div className="absolute top-1/2 -right-8 w-3 h-3 border border-primary rounded-full" />
                 </div>
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse-glow" />
-                <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-primary/60 rounded-full" />
-                <div className="absolute top-1/2 -right-8 w-3 h-3 border border-primary rounded-full" />
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Skills & Technologies */}
-          <div className="mb-20 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <h2 className="section-title">Skills & Technologies</h2>
-            <div className="bg-card border border-border rounded-xl p-8">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Developer</h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill) => (
-                  <SkillBadge key={skill} skill={skill} />
-                ))}
+          <ScrollReveal delay={0.1}>
+            <div className="mb-20">
+              <h2 className="section-title">Skills & Technologies</h2>
+              <div className="bg-card border border-border rounded-xl p-8">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Developer</h3>
+                <div className="flex flex-wrap gap-3">
+                  {skills.map((skill, index) => (
+                    <ScrollReveal key={skill} delay={index * 0.05} direction="scale">
+                      <SkillBadge skill={skill} />
+                    </ScrollReveal>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Experience Timeline */}
-          <div className="animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <ScrollReveal delay={0.2}>
             <h2 className="section-title">Experience</h2>
             <div className="space-y-8">
-              <div className="flex gap-6">
-                <div className="flex flex-col items-center">
-                  <div className="timeline-dot">2026</div>
-                  <div className="w-px h-full bg-border mt-4" />
+              <ScrollReveal delay={0.3} direction="left">
+                <div className="flex gap-6">
+                  <div className="flex flex-col items-center">
+                    <div className="timeline-dot">2026</div>
+                    <div className="w-px h-full bg-border mt-4" />
+                  </div>
+                  <div className="pb-8">
+                    <h3 className="text-lg font-semibold text-foreground">Developer</h3>
+                    <p className="text-primary text-sm mb-2">Building innovative projects</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      Currently working on PreCare — an Agentic AI project for pregnant women's healthcare.
+                      Focused on creating intelligent systems that provide proactive care and automate
+                      medical report analysis.
+                    </p>
+                  </div>
                 </div>
-                <div className="pb-8">
-                  <h3 className="text-lg font-semibold text-foreground">Developer</h3>
-                  <p className="text-primary text-sm mb-2">Building innovative projects</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Currently working on PreCare — an Agentic AI project for pregnant women's healthcare.
-                    Focused on creating intelligent systems that provide proactive care and automate
-                    medical report analysis.
-                  </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.4} direction="left">
+                <div className="flex gap-6">
+                  <div className="flex flex-col items-center">
+                    <div className="timeline-dot">2025</div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">Full Stack Developer</h3>
+                    <p className="text-primary text-sm mb-2">Web Development & UI/UX</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      Built multiple projects including Homomorphic Data Spark for privacy-preserving
+                      analytics, portfolio websites, and mobile app prototypes. Specialized in React,
+                      TypeScript, and modern web technologies.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-6">
-                <div className="flex flex-col items-center">
-                  <div className="timeline-dot">2025</div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground">Full Stack Developer</h3>
-                  <p className="text-primary text-sm mb-2">Web Development & UI/UX</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Built multiple projects including Homomorphic Data Spark for privacy-preserving
-                    analytics, portfolio websites, and mobile app prototypes. Specialized in React,
-                    TypeScript, and modern web technologies.
-                  </p>
-                </div>
-              </div>
+              </ScrollReveal>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </Layout>
