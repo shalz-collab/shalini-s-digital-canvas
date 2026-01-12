@@ -8,20 +8,29 @@ import projectMentalHealth from "@/assets/project-mental-health.jpg";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
 import projectPrecare from "@/assets/project-precare.jpg";
 import projectMcios from "@/assets/project-mcios.jpg";
+import projectPayroll from "@/assets/project-payroll.jpg";
 
 const projects = [
   {
     title: "Homomorphic Data Spark",
     description:
-      "Modern, cloud-secure analytics using homomorphic encryption (CKKS, SIMD batching) for privacy-preserving computations.",
+      "Cloud-secure analytics using homomorphic encryption for privacy-preserving computations.",
     liveUrl: "https://collegeprojectsshalzprizz.vercel.app/",
     githubUrl: "https://github.com/shalz-collab/homomorphic-data-spark",
     image: projectHomomorphic,
   },
   {
+    title: "Aura Payroll",
+    description:
+      "Modern payroll management system with employee salary tracking and payment processing.",
+    liveUrl: "https://aurapayroll.vercel.app/",
+    githubUrl: "https://github.com/shalz-collab",
+    image: projectPayroll,
+  },
+  {
     title: "MCIOS Portfolio",
     description:
-      "A creative macOS/iOS inspired portfolio website with glassmorphism effects and interactive dock navigation.",
+      "macOS/iOS inspired portfolio with glassmorphism effects and interactive dock navigation.",
     liveUrl: "https://shalinii-s-ios.vercel.app/",
     githubUrl: "https://github.com/shalz-collab/mcios-portfolio",
     image: projectMcios,
@@ -29,29 +38,29 @@ const projects = [
   {
     title: "Shalzzzminecraft",
     description:
-      "Creative portfolio website with modern interactive elements and unique Minecraft-inspired design.",
+      "Creative portfolio with modern interactive elements and Minecraft-inspired design.",
     liveUrl: "https://ghibli-night-folio-shalz-collabs-projects.vercel.app/",
     githubUrl: "https://github.com/shalz-collab/shalzzzminecraft",
     image: projectMinecraft,
   },
   {
-    title: "Mental Health Tracker & Mood Journal",
+    title: "Mental Health Tracker",
     description:
-      "UI Design (Figma) + React.js prototype for mental wellness tracking and mood journaling.",
+      "UI Design (Figma) + React.js prototype for mental wellness tracking.",
     githubUrl: "https://github.com/shalz-collab/mental-health-tracker",
     image: projectMentalHealth,
   },
   {
-    title: "E-Commerce App UI Design",
+    title: "E-Commerce App UI",
     description:
-      "Full mobile app prototype (cart and product flow) designed in Figma with modern aesthetics.",
+      "Mobile app prototype with cart and product flow designed in Figma.",
     githubUrl: "https://github.com/shalz-collab/e-commerce-ui",
     image: projectEcommerce,
   },
   {
     title: "PreCare — Agentic AI",
     description:
-      "An intelligent health assistant for pregnant women that analyzes medical reports, auto-books doctor appointments, and provides proactive care.",
+      "Intelligent health assistant for pregnant women with medical report analysis.",
     githubUrl: "https://github.com/shalz-collab/precare-agentic-ai",
     isUpcoming: true,
     image: projectPrecare,
