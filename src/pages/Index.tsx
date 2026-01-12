@@ -56,15 +56,13 @@ const Index = () => {
           </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-3xl font-bold text-foreground mb-4 font-sans md:text-5xl">
               Hi, I'm{" "}
               <span className="glow-text">Shalini MK</span>
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-6">
-              Building modern, secure, and user-centric digital solutions.
-            </p>
+            <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-6 font-mono">“Building the full picture — frontend, backend, and beyond.” </p>
           </ScrollReveal>
           
           <ScrollReveal delay={0.3}>
