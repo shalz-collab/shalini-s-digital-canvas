@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import SkillBadge from "@/components/SkillBadge";
 import ScrollReveal from "@/components/ScrollReveal";
+import catSprite from "@/assets/pixel-cat.png";
 
 const skills = [
   "HTML",
@@ -44,7 +45,13 @@ const About = () => {
               <div className="flex justify-center">
                 <div className="relative">
                   <div className="w-48 h-48 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
-                    <span className="text-8xl">👩‍💻</span>
+                    <img
+                      src={catSprite}
+                      alt="Pixel cat avatar"
+                      className="w-28 h-28"
+                      loading="lazy"
+                      draggable={false}
+                    />
                   </div>
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse-glow" />
                   <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-primary/60 rounded-full" />

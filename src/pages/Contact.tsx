@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
+import MiniGame from "@/components/MiniGame";
 
 const Contact = () => {
   return (
@@ -96,6 +97,10 @@ const Contact = () => {
               </ScrollReveal>
             </div>
           </div>
+
+          <ScrollReveal delay={0.2}>
+            <MiniGame />
+          </ScrollReveal>
         </div>
       </section>
     </Layout>
