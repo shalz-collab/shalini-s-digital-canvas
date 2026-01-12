@@ -8,47 +8,48 @@ import ProjectCard from "@/components/ProjectCard";
 import projectHomomorphic from "@/assets/project-homomorphic.jpg";
 import projectMinecraft from "@/assets/project-minecraft.jpg";
 import projectMentalHealth from "@/assets/project-mental-health.jpg";
-import projectEcommerce from "@/assets/project-ecommerce.jpg";
 import projectPrecare from "@/assets/project-precare.jpg";
 import projectMcios from "@/assets/project-mcios.jpg";
+import projectPayroll from "@/assets/project-payroll.jpg";
 
 const projects = [
   {
     title: "Homomorphic Data Spark",
-    description: "Modern, cloud-secure analytics using homomorphic encryption (CKKS, SIMD batching) for privacy-preserving computations.",
+    description: "Cloud-secure analytics using homomorphic encryption.",
     liveUrl: "https://collegeprojectsshalzprizz.vercel.app/",
     githubUrl: "https://github.com/shalz-collab/homomorphic-data-spark",
     image: projectHomomorphic,
   },
   {
-    title: "Shalzzzminecraft",
-    description: "Creative portfolio website with modern interactive elements.",
-    liveUrl: "https://ghibli-night-folio-shalz-collabs-projects.vercel.app/",
-    githubUrl: "https://github.com/shalz-collab/shalzzzminecraft",
-    image: projectMinecraft,
+    title: "Aura Payroll",
+    description: "Modern payroll management with salary tracking.",
+    liveUrl: "https://aurapayroll.vercel.app/",
+    githubUrl: "https://github.com/shalz-collab",
+    image: projectPayroll,
   },
   {
     title: "MCIOS Portfolio",
-    description: "iOS-inspired portfolio website with sleek Apple-style design and smooth animations.",
+    description: "iOS-inspired portfolio with glassmorphism effects.",
     liveUrl: "https://shalinii-s-ios.vercel.app/",
     githubUrl: "https://github.com/shalz-collab",
     image: projectMcios,
   },
   {
+    title: "Shalzzzminecraft",
+    description: "Minecraft-inspired portfolio with interactive elements.",
+    liveUrl: "https://ghibli-night-folio-shalz-collabs-projects.vercel.app/",
+    githubUrl: "https://github.com/shalz-collab/shalzzzminecraft",
+    image: projectMinecraft,
+  },
+  {
     title: "Mental Health Tracker",
-    description: "UI Design (Figma) + React.js prototype for mental wellness.",
+    description: "React.js prototype for mental wellness tracking.",
     githubUrl: "https://github.com/shalz-collab/mental-health-tracker",
     image: projectMentalHealth,
   },
   {
-    title: "E-Commerce App UI",
-    description: "Full mobile app prototype (cart and product flow) designed in Figma.",
-    githubUrl: "https://github.com/shalz-collab/e-commerce-ui",
-    image: projectEcommerce,
-  },
-  {
     title: "PreCare — Agentic AI",
-    description: "An intelligent health assistant for pregnant women that analyzes medical reports and provides proactive care.",
+    description: "AI health assistant for pregnant women.",
     githubUrl: "https://github.com/shalz-collab/precare-agentic-ai",
     image: projectPrecare,
     isUpcoming: true,
@@ -143,16 +144,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-16 border-t border-border/50">
+      {/* Languages Section */}
+      <section id="languages" className="py-12 border-t border-border/50">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                Tech Stack
+            <div className="text-center mb-8">
+              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
+                Languages & Tools
               </h2>
-              <p className="text-muted-foreground text-sm max-w-md mx-auto">
-                Technologies I work with to bring ideas to life
+              <p className="text-muted-foreground text-xs max-w-md mx-auto">
+                Technologies I work with
               </p>
             </div>
           </ScrollReveal>
