@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import SkillBadge from "@/components/SkillBadge";
 import ScrollReveal from "@/components/ScrollReveal";
-import catSprite from "@/assets/pixel-cat.png";
+import avatarImg from "@/assets/avatar.png";
 
 const skills = [
   "HTML",
@@ -44,11 +44,11 @@ const About = () => {
             <ScrollReveal delay={0.2} direction="right">
               <div className="flex justify-center">
                 <div className="relative">
-                  <div className="w-48 h-48 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
+                  <div className="w-48 h-48 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center overflow-hidden">
                     <img
-                      src={catSprite}
-                      alt="Pixel cat avatar"
-                      className="w-28 h-28"
+                      src={avatarImg}
+                      alt="Developer avatar"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                       draggable={false}
                     />
