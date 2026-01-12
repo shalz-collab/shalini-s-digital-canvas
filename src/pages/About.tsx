@@ -2,21 +2,9 @@ import Layout from "@/components/Layout";
 import SkillBadge from "@/components/SkillBadge";
 import ScrollReveal from "@/components/ScrollReveal";
 import avatarImg from "@/assets/avatar.png";
-
-const skills = [
-  "HTML",
-  "CSS",
-  "TypeScript",
-  "React",
-  "GIT",
-  "Firebase",
-  "Python",
-  "Node.js",
-];
-
+const skills = ["HTML", "CSS", "TypeScript", "React", "GIT", "Firebase", "Python", "Node.js"];
 const About = () => {
-  return (
-    <Layout>
+  return <Layout>
       <section className="py-20">
         <div className="container mx-auto px-6">
           {/* About Me */}
@@ -45,13 +33,7 @@ const About = () => {
               <div className="flex justify-center">
                 <div className="relative">
                   <div className="w-48 h-48 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center overflow-hidden">
-                    <img
-                      src={avatarImg}
-                      alt="Developer avatar"
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      draggable={false}
-                    />
+                    <img alt="Developer avatar" className="w-full h-full object-cover" loading="lazy" draggable={false} src="/lovable-uploads/a0dba7f2-3e55-49f7-8f9c-6b563e3a73c6.png" />
                   </div>
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse-glow" />
                   <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-primary/60 rounded-full" />
@@ -68,11 +50,9 @@ const About = () => {
               <div className="bg-card border border-border rounded-xl p-8">
                 <h3 className="text-lg font-semibold text-foreground mb-4">Developer</h3>
                 <div className="flex flex-wrap gap-3">
-                  {skills.map((skill, index) => (
-                    <ScrollReveal key={skill} delay={index * 0.05} direction="scale">
+                  {skills.map((skill, index) => <ScrollReveal key={skill} delay={index * 0.05} direction="scale">
                       <SkillBadge skill={skill} />
-                    </ScrollReveal>
-                  ))}
+                    </ScrollReveal>)}
                 </div>
               </div>
             </div>
@@ -119,8 +99,6 @@ const About = () => {
           </ScrollReveal>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default About;
