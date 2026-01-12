@@ -1,12 +1,10 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Contact = () => {
   return (
     <Layout>
-      <AnimatedBackground />
       <section className="py-20 min-h-[calc(100vh-12rem)]">
         <div className="container mx-auto px-6">
           <ScrollReveal>

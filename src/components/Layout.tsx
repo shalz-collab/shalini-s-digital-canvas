@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
+import VideoBackground from "./VideoBackground";
+import ContactModal from "./ContactModal";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   const navLinks = [
     { path: "/", label: "Home" },
@@ -13,14 +18,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      <VideoBackground />
+      
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/30">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="logo-text text-xl text-foreground hover:text-primary transition-colors">
             shalini mk
           </Link>
-          <div className="flex items-center gap-8">
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -31,14 +40,57 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </Link>
             ))}
           </div>
+
+          {/* Let's Talk Button (Desktop) */}
+          <button
+            onClick={() => setContactModalOpen(true)}
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)]"
+          >
+            Let's Talk
+          </button>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-foreground hover:text-primary transition-colors p-2"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/30 animate-fade-in">
+            <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`nav-link text-lg py-2 ${location.pathname === link.path ? "nav-link-active" : ""}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setContactModalOpen(true);
+                }}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all mt-2"
+              >
+                Let's Talk
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Main Content */}
-      <main className="pt-16">{children}</main>
+      <main className="pt-16 min-h-screen overflow-y-auto">{children}</main>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-8 mt-20">
+      <footer className="border-t border-border/50 py-8 mt-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
             © 2026 Shalini MK. All rights reserved.
@@ -69,6 +121,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
       </footer>
+
+      {/* Contact Modal */}
+      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </div>
   );
 };
