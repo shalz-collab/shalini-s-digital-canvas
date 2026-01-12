@@ -33,7 +33,7 @@ const About = () => {
               <div className="flex justify-center">
                 <div className="relative">
                   <div className="w-48 h-48 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center overflow-hidden">
-                    <img src={avatarImg} alt="Developer avatar" className="w-full h-full object-cover" loading="lazy" draggable={false} />
+                    <img alt="Developer avatar" className="w-full h-full object-cover" loading="lazy" draggable={false} src="" />
                   </div>
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse-glow" />
                   <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-primary/60 rounded-full" />
@@ -46,8 +46,8 @@ const About = () => {
           {/* Languages & Technologies */}
           <ScrollReveal delay={0.1}>
             <div className="mb-20">
-              <h2 className="section-title mx-0 px-0 py-0">Languages & Technologies</h2>
-              <div className="bg-card border border-border p-8 rounded-full">
+              <h2 className="section-title">Languages & Technologies</h2>
+              <div className="bg-card border border-border rounded-xl p-8">
                 <h3 className="text-lg font-semibold text-foreground mb-4">Developer</h3>
                 <div className="flex flex-wrap gap-3">
                   {skills.map((skill, index) => <ScrollReveal key={skill} delay={index * 0.05} direction="scale">
@@ -61,11 +61,11 @@ const About = () => {
           {/* Experience Timeline */}
           <ScrollReveal delay={0.2}>
             <h2 className="section-title">Experience</h2>
-            <div className="space-y-8 my-[2px]">
-              <ScrollReveal delay={0.3} direction="left" className="my-0 mx-[2px]">
+            <div className="space-y-8">
+              <ScrollReveal delay={0.3} direction="left" className="">
                 <div className="flex gap-6">
                   <div className="flex flex-col items-center">
-                    <div className="timeline-dot">2026</div>
+                    <div className="timeline-dot">Full Stack Developer</div>
                     <div className="w-px h-full bg-border mt-4" />
                   </div>
                   <div className="pb-8">
