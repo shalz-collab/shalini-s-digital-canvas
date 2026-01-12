@@ -5,12 +5,12 @@ import avatarImg from "@/assets/avatar.png";
 const skills = ["HTML", "CSS", "TypeScript", "React", "GIT", "Firebase", "Python", "Node.js"];
 const About = () => {
   return <Layout>
-      <section className="py-20 font-mono">
+      <section className="py-20">
         <div className="container mx-auto px-6">
           {/* About Me */}
           <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
             <ScrollReveal>
-              <h1 className="section-title font-mono">About Me</h1>
+              <h1 className="section-title">About Me</h1>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   I'm a passionate creative developer with experience building digital
@@ -33,7 +33,7 @@ const About = () => {
               <div className="flex justify-center">
                 <div className="relative">
                   <div className="w-48 h-48 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center overflow-hidden">
-                    <img alt="Developer avatar" className="w-full h-full object-cover" loading="lazy" draggable={false} src="/lovable-uploads/e986c283-c946-44d6-9373-81dd94f3c0ba.png" />
+                    <img src={avatarImg} alt="Developer avatar" className="w-full h-full object-cover" loading="lazy" draggable={false} />
                   </div>
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse-glow" />
                   <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-primary/60 rounded-full" />
@@ -47,7 +47,7 @@ const About = () => {
           <ScrollReveal delay={0.1}>
             <div className="mb-20">
               <h2 className="section-title">Languages & Technologies</h2>
-              <div className="bg-card border border-border rounded-xl p-8">
+              <div className="bg-card border border-border p-8 rounded-sm">
                 <h3 className="text-lg font-semibold text-foreground mb-4">Developer</h3>
                 <div className="flex flex-wrap gap-3">
                   {skills.map((skill, index) => <ScrollReveal key={skill} delay={index * 0.05} direction="scale">
@@ -65,7 +65,7 @@ const About = () => {
               <ScrollReveal delay={0.3} direction="left">
                 <div className="flex gap-6">
                   <div className="flex flex-col items-center">
-                    <div className="timeline-dot">Stack Developer</div>
+                    <div className="timeline-dot">2026</div>
                     <div className="w-px h-full bg-border mt-4" />
                   </div>
                   <div className="pb-8">
