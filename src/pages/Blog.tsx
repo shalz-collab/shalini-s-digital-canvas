@@ -2,7 +2,6 @@ import { Calendar, Clock, ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 const blogPosts = [
   {
@@ -17,16 +16,26 @@ const blogPosts = [
   },
   {
     id: 2,
-    title: "Building Modern React Applications with TypeScript",
+    title: "AI Revolution 2026: What's Changing This Year",
     excerpt:
-      "A comprehensive guide to structuring React applications with TypeScript for better type safety and developer experience.",
-    date: "Jan 5, 2026",
-    readTime: "12 min read",
-    category: "Development",
-    url: "https://medium.com/@shalinimuthukumar1434/react-typescript",
+      "From GPT-5 rumors to autonomous agents - a deep dive into the AI developments reshaping technology and society in 2026.",
+    date: "Jan 11, 2026",
+    readTime: "10 min read",
+    category: "Current Affairs",
+    url: "https://medium.com/@shalinimuthukumar1434/ai-revolution-2026",
   },
   {
     id: 3,
+    title: "India's Digital Public Infrastructure: A Global Model",
+    excerpt:
+      "How India's UPI, Aadhaar, and ONDC are becoming blueprints for digital transformation worldwide.",
+    date: "Jan 8, 2026",
+    readTime: "7 min read",
+    category: "Current Affairs",
+    url: "https://medium.com/@shalinimuthukumar1434/india-dpi-global-model",
+  },
+  {
+    id: 4,
     title: "The Future of Agentic AI in Healthcare",
     excerpt:
       "How autonomous AI agents are transforming patient care through proactive health monitoring and intelligent decision-making.",
@@ -36,7 +45,37 @@ const blogPosts = [
     url: "https://medium.com/@shalinimuthukumar1434/agentic-ai-healthcare",
   },
   {
-    id: 4,
+    id: 5,
+    title: "Climate Tech 2026: Innovations Fighting Global Warming",
+    excerpt:
+      "Latest breakthroughs in carbon capture, renewable energy, and sustainable tech that are making a real impact.",
+    date: "Jan 6, 2026",
+    readTime: "9 min read",
+    category: "Current Affairs",
+    url: "https://medium.com/@shalinimuthukumar1434/climate-tech-2026",
+  },
+  {
+    id: 6,
+    title: "Building Modern React Applications with TypeScript",
+    excerpt:
+      "A comprehensive guide to structuring React applications with TypeScript for better type safety and developer experience.",
+    date: "Jan 5, 2026",
+    readTime: "12 min read",
+    category: "Development",
+    url: "https://medium.com/@shalinimuthukumar1434/react-typescript",
+  },
+  {
+    id: 7,
+    title: "Space Exploration Updates: Mars Mission 2026",
+    excerpt:
+      "NASA and SpaceX's latest milestones in the journey to Mars and what it means for humanity's future in space.",
+    date: "Jan 3, 2026",
+    readTime: "8 min read",
+    category: "Current Affairs",
+    url: "https://medium.com/@shalinimuthukumar1434/mars-mission-2026",
+  },
+  {
+    id: 8,
     title: "Designing for Mental Wellness: UI/UX Best Practices",
     excerpt:
       "Key principles for creating calming, supportive interfaces in mental health applications that prioritize user wellbeing.",
@@ -44,16 +83,6 @@ const blogPosts = [
     readTime: "6 min read",
     category: "Design",
     url: "https://medium.com/@shalinimuthukumar1434/mental-wellness-design",
-  },
-  {
-    id: 5,
-    title: "Firebase vs Supabase: Choosing Your Backend",
-    excerpt:
-      "A detailed comparison of two popular backend-as-a-service platforms to help you make the right choice for your project.",
-    date: "Dec 15, 2025",
-    readTime: "9 min read",
-    category: "Development",
-    url: "https://medium.com/@shalinimuthukumar1434/firebase-vs-supabase",
   },
 ];
 
@@ -63,6 +92,7 @@ const getCategoryColor = (category: string) => {
     Development: "bg-blue-500/10 text-blue-400 border-blue-500/20",
     AI: "bg-green-500/10 text-green-400 border-green-500/20",
     Design: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+    "Current Affairs": "bg-orange-500/10 text-orange-400 border-orange-500/20",
   };
   return colors[category] || "bg-primary/10 text-primary border-primary/20";
 };
@@ -70,15 +100,14 @@ const getCategoryColor = (category: string) => {
 const Blog = () => {
   return (
     <Layout>
-      <AnimatedBackground />
       <section className="py-20">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="max-w-2xl mb-12">
               <h1 className="section-title">Blog</h1>
               <p className="text-muted-foreground leading-relaxed">
-                Thoughts, tutorials, and insights on web development, AI, design, and
-                the technologies I'm passionate about.
+                Thoughts, tutorials, current affairs, and insights on technology,
+                AI, and the world around us.
               </p>
             </div>
           </ScrollReveal>
@@ -128,7 +157,7 @@ const Blog = () => {
           {/* Other Posts Grid */}
           <div className="grid md:grid-cols-2 gap-6">
             {blogPosts.slice(1).map((post, index) => (
-              <ScrollReveal key={post.id} delay={(index + 2) * 0.1}>
+              <ScrollReveal key={post.id} delay={(index + 2) * 0.08}>
                 <a
                   href={post.url}
                   target="_blank"

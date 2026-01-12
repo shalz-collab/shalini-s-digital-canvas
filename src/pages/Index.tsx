@@ -216,13 +216,21 @@ const Index = () => {
             <p className="text-muted-foreground text-sm max-w-md mx-auto mb-6">
               Have a project in mind? I'd love to hear about it.
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-all hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)]"
-            >
-              Get in Touch
-              <ArrowRight size={16} />
-            </Link>
+            <div className="flex items-center justify-center gap-4 flex-wrap">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-all hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)]"
+              >
+                Get in Touch
+                <ArrowRight size={16} />
+              </Link>
+              <a
+                href="/contact#nebula-rush"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-primary/50 text-primary text-sm font-medium rounded-lg hover:bg-primary/10 transition-all"
+              >
+                🚀 Play Nebula Rush
+              </a>
+            </div>
           </ScrollReveal>
         </div>
       </section>
