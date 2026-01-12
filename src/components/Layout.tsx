@@ -3,22 +3,31 @@ import { Link, useLocation } from "react-router-dom";
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import VideoBackground from "./VideoBackground";
 import ContactModal from "./ContactModal";
-
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({
+  children
+}: {
+  children: React.ReactNode;
+}) => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
-
-  const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
-    { path: "/projects", label: "Projects" },
-    { path: "/blog", label: "Blog" },
-    { path: "/contact", label: "Contact" },
-  ];
-
-  return (
-    <div className="min-h-screen overflow-x-hidden">
+  const navLinks = [{
+    path: "/",
+    label: "Home"
+  }, {
+    path: "/about",
+    label: "About"
+  }, {
+    path: "/projects",
+    label: "Projects"
+  }, {
+    path: "/blog",
+    label: "Blog"
+  }, {
+    path: "/contact",
+    label: "Contact"
+  }];
+  return <div className="min-h-screen overflow-x-hidden">
       <VideoBackground />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/30">
@@ -29,60 +38,36 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`nav-link ${location.pathname === link.path ? "nav-link-active" : ""}`}
-              >
+            {navLinks.map(link => <Link key={link.path} to={link.path} className={`nav-link ${location.pathname === link.path ? "nav-link-active" : ""}`}>
                 {link.label}
-              </Link>
-            ))}
+              </Link>)}
           </div>
 
           {/* Let's Talk Button (Desktop) */}
-          <button
-            onClick={() => setContactModalOpen(true)}
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)]"
-          >
+          <button onClick={() => setContactModalOpen(true)} className="hidden md:inline-flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)]">
             Let's Talk
           </button>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-foreground hover:text-primary transition-colors p-2"
-          >
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-foreground hover:text-primary transition-colors p-2">
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/30 animate-fade-in">
+        {mobileMenuOpen && <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/30 animate-fade-in">
             <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`nav-link text-lg py-2 ${location.pathname === link.path ? "nav-link-active" : ""}`}
-                >
+              {navLinks.map(link => <Link key={link.path} to={link.path} onClick={() => setMobileMenuOpen(false)} className={`nav-link text-lg py-2 ${location.pathname === link.path ? "nav-link-active" : ""}`}>
                   {link.label}
-                </Link>
-              ))}
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setContactModalOpen(true);
-                }}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all mt-2"
-              >
+                </Link>)}
+              <button onClick={() => {
+            setMobileMenuOpen(false);
+            setContactModalOpen(true);
+          }} className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all mt-2">
                 Let's Talk
               </button>
             </div>
-          </div>
-        )}
+          </div>}
       </nav>
 
       {/* Main Content */}
@@ -91,30 +76,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {/* Footer */}
       <footer className="border-t border-border/50 py-8 mt-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm">
-            © 2026 Shalini MK. All rights reserved.
-          </p>
+          <p className="text-muted-foreground text-sm">© 2026 Shalini MK. </p>
           <div className="flex items-center gap-4">
-            <a
-              href="https://github.com/shalz-collab"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
+            <a href="https://github.com/shalz-collab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Github size={20} />
             </a>
-            <a
-              href="https://www.linkedin.com/in/shalini-mk-b3b67b273"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
+            <a href="https://www.linkedin.com/in/shalini-mk-b3b67b273" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin size={20} />
             </a>
-            <a
-              href="mailto:shalinimuthukumar1434@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
+            <a href="mailto:shalinimuthukumar1434@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
               <Mail size={20} />
             </a>
           </div>
@@ -123,8 +93,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       {/* Contact Modal */}
       <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
-    </div>
-  );
+    </div>;
 };
-
 export default Layout;
