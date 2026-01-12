@@ -46,7 +46,7 @@ const About = () => {
           {/* Languages & Technologies */}
           <ScrollReveal delay={0.1}>
             <div className="mb-20">
-              <h2 className="section-title">Languages & Technologies</h2>
+              <h2 className="section-title mx-0 px-0 py-0">Languages & Technologies</h2>
               <div className="bg-card border border-border p-8 rounded-full">
                 <h3 className="text-lg font-semibold text-foreground mb-4">Developer</h3>
                 <div className="flex flex-wrap gap-3">
