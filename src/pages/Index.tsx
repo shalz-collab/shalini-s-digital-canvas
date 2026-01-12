@@ -119,7 +119,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-8">
-              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
+              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2 font-mono">
                 Languages & Tools
               </h2>
               <p className="text-muted-foreground text-xs max-w-md mx-auto">
@@ -137,7 +137,7 @@ const Index = () => {
           <ScrollReveal>
             <div className="flex items-center justify-between mb-10">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2 font-mono">
                   Featured Projects
                 </h2>
                 <p className="text-muted-foreground text-sm">
@@ -172,7 +172,7 @@ const Index = () => {
       <section className="py-16 border-t border-border/50">
         <div className="container mx-auto px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3 font-mono">
               Let's Work Together
             </h2>
             <p className="text-muted-foreground text-sm max-w-md mx-auto mb-6">
@@ -181,9 +181,9 @@ const Index = () => {
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-all hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)]">
                 Get in Touch
-                <ArrowRight size={16} />
+                <ArrowRight size={16} className="font-mono" />
               </Link>
-              <a href="/contact#nebula-rush" className="inline-flex items-center gap-2 px-6 py-3 border border-primary/50 text-primary text-sm font-medium rounded-lg hover:bg-primary/10 transition-all">
+              <a href="/contact#nebula-rush" className="inline-flex items-center gap-2 px-6 py-3 border border-primary/50 text-primary text-sm font-medium rounded-lg hover:bg-primary/10 transition-all font-mono">
                 🚀 Play Nebula Rush
               </a>
             </div>

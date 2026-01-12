@@ -76,7 +76,7 @@ const Layout = ({
       {/* Footer */}
       <footer className="border-t border-border/50 py-8 mt-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm">© 2026 Shalini MK. </p>
+          <p className="text-muted-foreground text-sm font-mono">© 2026 Shalini MK. </p>
           <div className="flex items-center gap-4">
             <a href="https://github.com/shalz-collab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Github size={20} />
