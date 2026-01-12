@@ -9,7 +9,7 @@ const VideoBackground = () => {
         className="absolute min-w-full min-h-full object-cover"
       >
         <source
-          src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-network-connections-27611-large.mp4"
+          src="/background-video.mp4"
           type="video/mp4"
         />
       </video>

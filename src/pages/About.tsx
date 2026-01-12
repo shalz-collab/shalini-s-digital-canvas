@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import SkillBadge from "@/components/SkillBadge";
 import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 const skills = [
   "HTML",
@@ -17,7 +16,6 @@ const skills = [
 const About = () => {
   return (
     <Layout>
-      <AnimatedBackground />
       <section className="py-20">
         <div className="container mx-auto px-6">
           {/* About Me */}

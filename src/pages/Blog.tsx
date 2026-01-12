@@ -1,4 +1,4 @@
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -13,6 +13,7 @@ const blogPosts = [
     date: "Jan 10, 2026",
     readTime: "8 min read",
     category: "Security",
+    url: "https://medium.com/@shalinimuthukumar1434/homomorphic-encryption",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const blogPosts = [
     date: "Jan 5, 2026",
     readTime: "12 min read",
     category: "Development",
+    url: "https://medium.com/@shalinimuthukumar1434/react-typescript",
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const blogPosts = [
     date: "Dec 28, 2025",
     readTime: "10 min read",
     category: "AI",
+    url: "https://medium.com/@shalinimuthukumar1434/agentic-ai-healthcare",
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ const blogPosts = [
     date: "Dec 20, 2025",
     readTime: "6 min read",
     category: "Design",
+    url: "https://medium.com/@shalinimuthukumar1434/mental-wellness-design",
   },
   {
     id: 5,
@@ -49,6 +53,7 @@ const blogPosts = [
     date: "Dec 15, 2025",
     readTime: "9 min read",
     category: "Development",
+    url: "https://medium.com/@shalinimuthukumar1434/firebase-vs-supabase",
   },
 ];
 
@@ -81,7 +86,12 @@ const Blog = () => {
           {/* Featured Post */}
           <ScrollReveal delay={0.1}>
             <div className="mb-12">
-              <div className="project-card group p-8">
+              <a
+                href={blogPosts[0].url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block project-card group p-8 cursor-pointer hover:border-primary/50 transition-all"
+              >
                 <span
                   className={`inline-block px-3 py-1 text-xs font-medium rounded-full border mb-4 ${getCategoryColor(
                     blogPosts[0].category
@@ -106,12 +116,12 @@ const Blog = () => {
                       {blogPosts[0].readTime}
                     </span>
                   </div>
-                  <button className="flex items-center gap-2 text-primary hover:gap-3 transition-all">
-                    Read More
-                    <ArrowRight size={16} />
-                  </button>
+                  <span className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
+                    Read Article
+                    <ExternalLink size={16} />
+                  </span>
                 </div>
-              </div>
+              </a>
             </div>
           </ScrollReveal>
 
@@ -119,7 +129,12 @@ const Blog = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {blogPosts.slice(1).map((post, index) => (
               <ScrollReveal key={post.id} delay={(index + 2) * 0.1}>
-                <article className="project-card group h-full">
+                <a
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block project-card group h-full cursor-pointer hover:border-primary/50 transition-all"
+                >
                   <span
                     className={`inline-block px-3 py-1 text-xs font-medium rounded-full border mb-4 ${getCategoryColor(
                       post.category
@@ -133,17 +148,20 @@ const Blog = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground mt-auto">
-                    <span className="flex items-center gap-1">
-                      <Calendar size={12} />
-                      {post.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock size={12} />
-                      {post.readTime}
-                    </span>
+                  <div className="flex items-center justify-between mt-auto">
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1">
+                        <Calendar size={12} />
+                        {post.date}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock size={12} />
+                        {post.readTime}
+                      </span>
+                    </div>
+                    <ExternalLink size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                </article>
+                </a>
               </ScrollReveal>
             ))}
           </div>

@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 import Layout from "@/components/Layout";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const Index = () => {
   return (
     <Layout>
-      <AnimatedBackground />
       
       {/* Hero Section */}
       <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center hero-gradient">
