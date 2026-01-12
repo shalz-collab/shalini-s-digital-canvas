@@ -47,7 +47,7 @@ const About = () => {
           <ScrollReveal delay={0.1}>
             <div className="mb-20">
               <h2 className="section-title">Languages & Technologies</h2>
-              <div className="bg-card border border-border p-8 rounded-sm">
+              <div className="bg-card border border-border p-8 rounded-full">
                 <h3 className="text-lg font-semibold text-foreground mb-4">Developer</h3>
                 <div className="flex flex-wrap gap-3">
                   {skills.map((skill, index) => <ScrollReveal key={skill} delay={index * 0.05} direction="scale">
