@@ -61,7 +61,7 @@ const About = () => {
           {/* Experience Timeline */}
           <ScrollReveal delay={0.2}>
             <h2 className="section-title">Experience</h2>
-            <div className="space-y-8">
+            <div className="space-y-8 my-[2px]">
               <ScrollReveal delay={0.3} direction="left">
                 <div className="flex gap-6">
                   <div className="flex flex-col items-center">
