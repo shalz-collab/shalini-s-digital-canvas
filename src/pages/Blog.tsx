@@ -1,4 +1,4 @@
-import { Calendar, Clock, ArrowRight, ExternalLink } from "lucide-react";
+import { Calendar, Clock, ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -12,7 +12,7 @@ const blogPosts = [
     date: "Jan 10, 2026",
     readTime: "8 min read",
     category: "Security",
-    url: "https://medium.com/@shalinimuthukumar1434/homomorphic-encryption",
+    url: "https://www.cloudflare.com/learning/security/what-is-homomorphic-encryption/",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const blogPosts = [
     date: "Jan 11, 2026",
     readTime: "10 min read",
     category: "Current Affairs",
-    url: "https://medium.com/@shalinimuthukumar1434/ai-revolution-2026",
+    url: "https://www.technologyreview.com/topic/artificial-intelligence/",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const blogPosts = [
     date: "Jan 8, 2026",
     readTime: "7 min read",
     category: "Current Affairs",
-    url: "https://medium.com/@shalinimuthukumar1434/india-dpi-global-model",
+    url: "https://www.weforum.org/agenda/2023/09/india-digital-public-infrastructure/",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const blogPosts = [
     date: "Dec 28, 2025",
     readTime: "10 min read",
     category: "AI",
-    url: "https://medium.com/@shalinimuthukumar1434/agentic-ai-healthcare",
+    url: "https://www.nature.com/articles/d41586-024-00135-7",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const blogPosts = [
     date: "Jan 6, 2026",
     readTime: "9 min read",
     category: "Current Affairs",
-    url: "https://medium.com/@shalinimuthukumar1434/climate-tech-2026",
+    url: "https://www.bbc.com/future/article/20231114-climate-tech",
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ const blogPosts = [
     date: "Jan 5, 2026",
     readTime: "12 min read",
     category: "Development",
-    url: "https://medium.com/@shalinimuthukumar1434/react-typescript",
+    url: "https://react.dev/learn/typescript",
   },
   {
     id: 7,
@@ -72,7 +72,7 @@ const blogPosts = [
     date: "Jan 3, 2026",
     readTime: "8 min read",
     category: "Current Affairs",
-    url: "https://medium.com/@shalinimuthukumar1434/mars-mission-2026",
+    url: "https://www.nasa.gov/humans-in-space/moon-to-mars/",
   },
   {
     id: 8,
@@ -82,7 +82,7 @@ const blogPosts = [
     date: "Dec 20, 2025",
     readTime: "6 min read",
     category: "Design",
-    url: "https://medium.com/@shalinimuthukumar1434/mental-wellness-design",
+    url: "https://uxdesign.cc/designing-for-mental-health-5-principles-5f1ad5b3c9c4",
   },
 ];
 
@@ -104,7 +104,7 @@ const Blog = () => {
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="max-w-2xl mb-12">
-              <h1 className="section-title">Blog</h1>
+              <h1 className="section-title">Blog & Current Affairs</h1>
               <p className="text-muted-foreground leading-relaxed">
                 Thoughts, tutorials, current affairs, and insights on technology,
                 AI, and the world around us.
@@ -188,7 +188,10 @@ const Blog = () => {
                         {post.readTime}
                       </span>
                     </div>
-                    <ExternalLink size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ExternalLink
+                      size={14}
+                      className="text-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                    />
                   </div>
                 </a>
               </ScrollReveal>
