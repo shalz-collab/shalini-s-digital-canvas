@@ -6,93 +6,92 @@ import ScrollReveal from "@/components/ScrollReveal";
 const blogPosts = [
   {
     id: 1,
-    title: "Understanding Homomorphic Encryption for Cloud Security",
+    title: "Apple Vision Pro 2: What We Know So Far in 2026",
     excerpt:
-      "Explore how homomorphic encryption enables privacy-preserving computations on encrypted data, revolutionizing cloud security.",
-    date: "Jan 10, 2026",
-    readTime: "8 min read",
-    category: "Security",
-    url: "https://www.cloudflare.com/learning/security/what-is-homomorphic-encryption/",
+      "Apple's next-gen mixed reality headset promises lighter design, improved displays, and new developer tools for spatial computing.",
+    date: "Jan 13, 2026",
+    readTime: "7 min read",
+    category: "Tech",
+    url: "https://www.apple.com/apple-vision-pro/",
   },
   {
     id: 2,
-    title: "AI Revolution 2026: What's Changing This Year",
+    title: "OpenAI's GPT-5: The Next Leap in AI Reasoning",
     excerpt:
-      "From GPT-5 rumors to autonomous agents - a deep dive into the AI developments reshaping technology and society in 2026.",
-    date: "Jan 11, 2026",
-    readTime: "10 min read",
-    category: "Current Affairs",
-    url: "https://www.technologyreview.com/topic/artificial-intelligence/",
+      "Early reports suggest GPT-5 brings unprecedented reasoning capabilities and multimodal understanding to AI assistants.",
+    date: "Jan 12, 2026",
+    readTime: "9 min read",
+    category: "AI",
+    url: "https://openai.com/",
   },
   {
     id: 3,
-    title: "India's Digital Public Infrastructure: A Global Model",
+    title: "React 19 Features You Should Know About",
     excerpt:
-      "How India's UPI, Aadhaar, and ONDC are becoming blueprints for digital transformation worldwide.",
-    date: "Jan 8, 2026",
-    readTime: "7 min read",
-    category: "Current Affairs",
-    url: "https://www.weforum.org/agenda/2023/09/india-digital-public-infrastructure/",
+      "From Actions to improved Suspense - explore the game-changing features in the latest React release.",
+    date: "Jan 11, 2026",
+    readTime: "10 min read",
+    category: "Development",
+    url: "https://react.dev/blog",
   },
   {
     id: 4,
+    title: "NVIDIA's Blackwell GPUs: Reshaping AI Training",
+    excerpt:
+      "The new Blackwell architecture delivers 4x faster AI training, making large language models more accessible than ever.",
+    date: "Jan 10, 2026",
+    readTime: "8 min read",
+    category: "Tech",
+    url: "https://www.nvidia.com/en-us/data-center/",
+  },
+  {
+    id: 5,
+    title: "GitHub Copilot X: AI-Powered Development Gets Smarter",
+    excerpt:
+      "The latest Copilot update brings voice commands, automated PR reviews, and context-aware code explanations.",
+    date: "Jan 9, 2026",
+    readTime: "6 min read",
+    category: "Development",
+    url: "https://github.com/features/copilot",
+  },
+  {
+    id: 6,
+    title: "Tesla Optimus Gen 3: Humanoid Robots in Production",
+    excerpt:
+      "Tesla's latest humanoid robot is now being deployed in factories, marking a new era in automation.",
+    date: "Jan 8, 2026",
+    readTime: "7 min read",
+    category: "Tech",
+    url: "https://www.tesla.com/optimus",
+  },
+  {
+    id: 7,
     title: "The Future of Agentic AI in Healthcare",
     excerpt:
       "How autonomous AI agents are transforming patient care through proactive health monitoring and intelligent decision-making.",
-    date: "Dec 28, 2025",
+    date: "Jan 7, 2026",
     readTime: "10 min read",
     category: "AI",
     url: "https://www.nature.com/articles/d41586-024-00135-7",
   },
   {
-    id: 5,
-    title: "Climate Tech 2026: Innovations Fighting Global Warming",
-    excerpt:
-      "Latest breakthroughs in carbon capture, renewable energy, and sustainable tech that are making a real impact.",
-    date: "Jan 6, 2026",
-    readTime: "9 min read",
-    category: "Current Affairs",
-    url: "https://www.bbc.com/future/article/20231114-climate-tech",
-  },
-  {
-    id: 6,
-    title: "Building Modern React Applications with TypeScript",
-    excerpt:
-      "A comprehensive guide to structuring React applications with TypeScript for better type safety and developer experience.",
-    date: "Jan 5, 2026",
-    readTime: "12 min read",
-    category: "Development",
-    url: "https://react.dev/learn/typescript",
-  },
-  {
-    id: 7,
-    title: "Space Exploration Updates: Mars Mission 2026",
-    excerpt:
-      "NASA and SpaceX's latest milestones in the journey to Mars and what it means for humanity's future in space.",
-    date: "Jan 3, 2026",
-    readTime: "8 min read",
-    category: "Current Affairs",
-    url: "https://www.nasa.gov/humans-in-space/moon-to-mars/",
-  },
-  {
     id: 8,
-    title: "Designing for Mental Wellness: UI/UX Best Practices",
+    title: "Tailwind CSS v4: Performance & DX Improvements",
     excerpt:
-      "Key principles for creating calming, supportive interfaces in mental health applications that prioritize user wellbeing.",
-    date: "Dec 20, 2025",
+      "The new Tailwind release brings native CSS variables, faster builds, and improved developer experience.",
+    date: "Jan 6, 2026",
     readTime: "6 min read",
-    category: "Design",
-    url: "https://uxdesign.cc/designing-for-mental-health-5-principles-5f1ad5b3c9c4",
+    category: "Development",
+    url: "https://tailwindcss.com/blog",
   },
 ];
 
 const getCategoryColor = (category: string) => {
   const colors: Record<string, string> = {
-    Security: "bg-red-500/10 text-red-400 border-red-500/20",
+    Tech: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
     Development: "bg-blue-500/10 text-blue-400 border-blue-500/20",
     AI: "bg-green-500/10 text-green-400 border-green-500/20",
     Design: "bg-purple-500/10 text-purple-400 border-purple-500/20",
-    "Current Affairs": "bg-orange-500/10 text-orange-400 border-orange-500/20",
   };
   return colors[category] || "bg-primary/10 text-primary border-primary/20";
 };
@@ -104,10 +103,10 @@ const Blog = () => {
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="max-w-2xl mb-12">
-              <h1 className="section-title">Blog & Current Affairs</h1>
+              <h1 className="section-title">Tech Blog</h1>
               <p className="text-muted-foreground leading-relaxed">
-                Thoughts, tutorials, current affairs, and insights on technology,
-                AI, and the world around us.
+                Latest updates, tutorials, and insights on technology,
+                AI, and software development.
               </p>
             </div>
           </ScrollReveal>

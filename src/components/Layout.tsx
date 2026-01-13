@@ -23,7 +23,7 @@ const Layout = ({
   ];
 
   const handleScheduleCall = () => {
-    window.open("https://calendly.com", "_blank");
+    setContactModalOpen(true);
   };
 
   return (
