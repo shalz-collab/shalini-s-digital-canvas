@@ -49,11 +49,13 @@ const Layout = ({
           {/* Action Buttons (Desktop) */}
           <div className="hidden md:flex items-center gap-3">
             <a 
-              href="mailto:shalinimuthukumar1434@gmail.com?subject=Let's%20Schedule%20a%20Call" 
+              href="https://calendly.com" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 border border-border text-foreground text-sm font-medium rounded-full hover:border-primary hover:text-primary transition-all"
             >
               <Calendar size={14} />
-              Schedule Call
+              Book a Call
             </a>
             <button onClick={() => setContactModalOpen(true)} className="inline-flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)]">
               <Mail size={14} />
@@ -75,12 +77,14 @@ const Layout = ({
                   {link.label}
                 </Link>)}
               <a 
-                href="mailto:shalinimuthukumar1434@gmail.com?subject=Let's%20Schedule%20a%20Call"
+                href="https://calendly.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-foreground text-sm font-medium rounded-full hover:border-primary hover:text-primary transition-all"
               >
                 <Calendar size={16} />
-                Schedule Call
+                Book a Call
               </a>
               <button onClick={() => {
                 setMobileMenuOpen(false);
