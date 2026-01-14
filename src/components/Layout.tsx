@@ -49,7 +49,7 @@ const Layout = ({
           {/* Action Buttons (Desktop) */}
           <div className="hidden md:flex items-center gap-3">
             <a 
-              href="https://calendly.com" 
+              href="https://calendly.com/shalinimk50/30min" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 border border-border text-foreground text-sm font-medium rounded-full hover:border-primary hover:text-primary transition-all"
@@ -77,7 +77,7 @@ const Layout = ({
                   {link.label}
                 </Link>)}
               <a 
-                href="https://calendly.com"
+                href="https://calendly.com/shalinimk50/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
