@@ -31,9 +31,6 @@ const Layout = ({
     label: "Nebula Rush",
     icon: Rocket
   }];
-  const handleScheduleCall = () => {
-    setContactModalOpen(true);
-  };
   return <div className="min-h-screen overflow-x-hidden">
       <VideoBackground />
       {/* Navigation */}
@@ -51,12 +48,16 @@ const Layout = ({
 
           {/* Action Buttons (Desktop) */}
           <div className="hidden md:flex items-center gap-3">
-            <button onClick={handleScheduleCall} className="inline-flex items-center gap-2 px-4 py-2 border border-border text-foreground text-sm font-medium rounded-full hover:border-primary hover:text-primary transition-all">
+            <a 
+              href="mailto:shalinimuthukumar1434@gmail.com?subject=Let's%20Schedule%20a%20Call" 
+              className="inline-flex items-center gap-2 px-4 py-2 border border-border text-foreground text-sm font-medium rounded-full hover:border-primary hover:text-primary transition-all"
+            >
               <Calendar size={14} />
-              Book a Chat
-            </button>
+              Schedule Call
+            </a>
             <button onClick={() => setContactModalOpen(true)} className="inline-flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)]">
-              Let's Talk
+              <Mail size={14} />
+              Get in Touch
             </button>
           </div>
 
@@ -73,18 +74,20 @@ const Layout = ({
                   {link.icon && <link.icon size={16} />}
                   {link.label}
                 </Link>)}
-              <button onClick={() => {
-            setMobileMenuOpen(false);
-            handleScheduleCall();
-          }} className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-foreground text-sm font-medium rounded-full hover:border-primary hover:text-primary transition-all">
+              <a 
+                href="mailto:shalinimuthukumar1434@gmail.com?subject=Let's%20Schedule%20a%20Call"
+                onClick={() => setMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-foreground text-sm font-medium rounded-full hover:border-primary hover:text-primary transition-all"
+              >
                 <Calendar size={16} />
-                Book a Chat
-              </button>
+                Schedule Call
+              </a>
               <button onClick={() => {
-            setMobileMenuOpen(false);
-            setContactModalOpen(true);
-          }} className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all">
-                Let's Talk
+                setMobileMenuOpen(false);
+                setContactModalOpen(true);
+              }} className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all">
+                <Mail size={16} />
+                Get in Touch
               </button>
             </div>
           </div>}
