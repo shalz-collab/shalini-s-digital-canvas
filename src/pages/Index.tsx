@@ -59,7 +59,6 @@ const projects = [
 const typewriterTexts = [
   "Full Stack Developer",
   "AI Enthusiast",
-  "Creative Coder",
   "Problem Solver",
 ];
 
