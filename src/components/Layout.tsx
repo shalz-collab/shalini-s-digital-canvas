@@ -24,37 +24,37 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-xl border-b border-primary/10">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={`nav-link flex items-center gap-1 ${location.pathname === link.path ? "nav-link-active" : ""}`}
               >
-                {link.icon && <link.icon size={14} />}
+                {link.icon && <link.icon size={12} />}
                 {link.label}
               </Link>
             ))}
           </div>
 
           {/* Action Buttons (Desktop) */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2">
             <a
               href="https://calendly.com/shalinim1434-sse-saveetha/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 border border-border text-foreground text-xs font-bold rounded tracking-wider uppercase hover:border-primary hover:text-primary transition-all font-display"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-border text-foreground text-[10px] font-bold rounded tracking-wider uppercase hover:border-primary hover:text-primary transition-all font-display"
             >
-              <Calendar size={14} />
+              <Calendar size={12} />
               Book a Call
             </a>
             <button
               onClick={() => setContactModalOpen(true)}
-              className="inline-flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground text-xs font-bold rounded tracking-wider uppercase hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)] font-display"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-primary text-primary-foreground text-[10px] font-bold rounded tracking-wider uppercase hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)] font-display"
             >
-              <Mail size={14} />
+              <Mail size={12} />
               Transmit
             </button>
           </div>
@@ -62,24 +62,24 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-foreground hover:text-primary transition-colors p-2"
+            className="md:hidden text-foreground hover:text-primary transition-colors p-1.5"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-primary/10 animate-fade-in">
-            <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
+            <div className="container mx-auto px-4 py-3 flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`nav-link text-sm py-2 flex items-center gap-2 ${location.pathname === link.path ? "nav-link-active" : ""}`}
+                  className={`nav-link text-xs py-2 flex items-center gap-2 ${location.pathname === link.path ? "nav-link-active" : ""}`}
                 >
-                  {link.icon && <link.icon size={16} />}
+                  {link.icon && <link.icon size={12} />}
                   {link.label}
                 </Link>
               ))}
@@ -88,9 +88,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-foreground text-xs font-bold rounded tracking-wider uppercase hover:border-primary hover:text-primary transition-all font-display"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-border text-foreground text-[10px] font-bold rounded tracking-wider uppercase hover:border-primary hover:text-primary transition-all font-display"
               >
-                <Calendar size={16} />
+                <Calendar size={12} />
                 Book a Call
               </a>
               <button
@@ -98,9 +98,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   setMobileMenuOpen(false);
                   setContactModalOpen(true);
                 }}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground text-xs font-bold rounded tracking-wider uppercase hover:bg-primary/90 transition-all font-display"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-primary text-primary-foreground text-[10px] font-bold rounded tracking-wider uppercase hover:bg-primary/90 transition-all font-display"
               >
-                <Mail size={16} />
+                <Mail size={12} />
                 Transmit
               </button>
             </div>
@@ -109,23 +109,23 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </nav>
 
       {/* Main Content */}
-      <main className="pt-16 min-h-screen overflow-y-auto">{children}</main>
+      <main className="pt-14 min-h-screen overflow-y-auto">{children}</main>
 
       {/* Footer */}
-      <footer className="border-t border-primary/10 py-8 mt-20 bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-xs font-display tracking-wider uppercase">
+      <footer className="border-t border-primary/10 py-6 mt-16 bg-background/80 backdrop-blur-sm">
+        <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-muted-foreground text-[10px] font-display tracking-wider uppercase">
             © 2026 Shalini MK · May the Force be with you
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <a href="https://github.com/shalz-collab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Github size={20} />
+              <Github size={16} />
             </a>
             <a href="https://www.linkedin.com/in/shalini-mk-b3b67b273" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin size={20} />
+              <Linkedin size={16} />
             </a>
             <a href="mailto:shalinimuthukumar1434@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-              <Mail size={20} />
+              <Mail size={16} />
             </a>
           </div>
         </div>
