@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    --background: 230 15% 3%;
-    --foreground: 45 10% 90%;
+    --background: 220 20% 3%;
+    --foreground: 210 20% 90%;
 
-    --card: 230 15% 6%;
-    --card-foreground: 45 10% 90%;
+    --card: 220 25% 7%;
+    --card-foreground: 210 20% 90%;
 
-    --popover: 230 15% 6%;
-    --popover-foreground: 45 10% 90%;
+    --popover: 220 25% 7%;
+    --popover-foreground: 210 20% 90%;
 
-    --primary: 45 100% 50%;
-    --primary-foreground: 230 15% 5%;
+    --primary: 200 100% 55%;
+    --primary-foreground: 220 20% 3%;
 
-    --secondary: 230 15% 10%;
-    --secondary-foreground: 45 10% 90%;
+    --secondary: 220 20% 10%;
+    --secondary-foreground: 210 20% 90%;
 
-    --muted: 230 12% 14%;
-    --muted-foreground: 45 5% 50%;
+    --muted: 220 18% 14%;
+    --muted-foreground: 210 10% 50%;
 
-    --accent: 45 100% 50%;
-    --accent-foreground: 230 15% 5%;
+    --accent: 260 80% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 45 20% 15%;
-    --input: 230 15% 15%;
-    --ring: 45 100% 50%;
+    --border: 210 20% 15%;
+    --input: 220 20% 15%;
+    --ring: 200 100% 55%;
 
     --radius: 0.25rem;
 
     /* Star Wars custom tokens */
-    --sw-gold: 45 100% 50%;
-    --sw-gold-dim: 45 60% 35%;
-    --sw-blue: 210 100% 60%;
+    --sw-cyan: 200 100% 55%;
+    --sw-cyan-dim: 200 50% 30%;
+    --sw-purple: 260 80% 60%;
     --sw-red: 0 85% 55%;
-    --sw-space: 230 15% 5%;
-    --dark-surface: 230 15% 7%;
-    --text-dim: 45 5% 40%;
+    --sw-space: 220 20% 5%;
+    --dark-surface: 220 20% 7%;
+    --text-dim: 210 10% 40%;
   }
 
   .dark {
-    --background: 230 15% 3%;
-    --foreground: 45 10% 90%;
+    --background: 220 20% 3%;
+    --foreground: 210 20% 90%;
   }
 }
 
@@ -77,7 +77,7 @@
 
   .nav-link-active {
     @apply text-primary;
-    text-shadow: 0 0 10px hsl(45 100% 50% / 0.6);
+    text-shadow: 0 0 10px hsl(200 100% 55% / 0.6);
   }
 
   .skill-badge {
@@ -90,7 +90,7 @@
     box-shadow: 0 0 0 rgba(255, 200, 0, 0);
   }
   .project-card:hover {
-    box-shadow: 0 0 30px rgba(255, 200, 0, 0.08), inset 0 0 30px rgba(255, 200, 0, 0.02);
+    box-shadow: 0 0 30px rgba(0, 170, 255, 0.1), inset 0 0 30px rgba(0, 170, 255, 0.03);
   }
 
   .section-title {
@@ -101,17 +101,17 @@
 
   .glow-text {
     @apply text-primary;
-    text-shadow: 0 0 20px hsl(45 100% 50% / 0.6), 0 0 40px hsl(45 100% 50% / 0.3);
+    text-shadow: 0 0 20px hsl(200 100% 55% / 0.6), 0 0 40px hsl(200 100% 55% / 0.3);
   }
 
   .timeline-dot {
     @apply w-12 h-12 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground;
-    box-shadow: 0 0 20px hsl(45 100% 50% / 0.4), 0 0 40px hsl(45 100% 50% / 0.15);
+    box-shadow: 0 0 20px hsl(200 100% 55% / 0.4), 0 0 40px hsl(200 100% 55% / 0.15);
     font-family: 'Orbitron', sans-serif;
   }
 
   .hero-gradient {
-    background: radial-gradient(ellipse at top, hsl(45 100% 50% / 0.08) 0%, transparent 50%);
+    background: radial-gradient(ellipse at top, hsl(200 100% 55% / 0.08) 0%, transparent 50%);
   }
 
   .logo-text {
@@ -149,11 +149,11 @@
 @keyframes pulse-glow {
   0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 20px hsl(45 100% 50% / 0.4);
+    box-shadow: 0 0 20px hsl(200 100% 55% / 0.4);
   }
   50% {
     opacity: 0.8;
-    box-shadow: 0 0 40px hsl(45 100% 50% / 0.6);
+    box-shadow: 0 0 40px hsl(200 100% 55% / 0.6);
   }
 }
 
@@ -191,8 +191,8 @@
 }
 
 @keyframes lightsaber-pulse {
-  0%, 100% { opacity: 0.6; box-shadow: 0 0 10px hsl(45 100% 50% / 0.3); }
-  50% { opacity: 1; box-shadow: 0 0 25px hsl(45 100% 50% / 0.6); }
+  0%, 100% { opacity: 0.6; box-shadow: 0 0 10px hsl(200 100% 55% / 0.3); }
+  50% { opacity: 1; box-shadow: 0 0 25px hsl(200 100% 55% / 0.6); }
 }
 
 .animate-orb-1 { animation: orb-float-1 20s ease-in-out infinite; }
@@ -203,7 +203,7 @@
   position: absolute;
   width: 100px;
   height: 2px;
-  background: linear-gradient(90deg, hsl(45 100% 50%), transparent);
+  background: linear-gradient(90deg, hsl(200 100% 55%), transparent);
   border-radius: 50%;
   opacity: 0;
 }
@@ -238,12 +238,12 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(230 15% 5%);
+  background: hsl(220 20% 5%);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(45 100% 50% / 0.3);
+  background: hsl(200 100% 55% / 0.3);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(45 100% 50% / 0.5);
+  background: hsl(200 100% 55% / 0.5);
 }
