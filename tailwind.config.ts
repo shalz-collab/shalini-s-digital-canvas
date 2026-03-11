@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
+        sans: ['Rajdhani', 'sans-serif'],
+        display: ['Orbitron', 'sans-serif'],
+        mono: ['Share Tech Mono', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,9 +52,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        purple: {
-          glow: "hsl(var(--purple-glow))",
-          muted: "hsl(var(--purple-muted))",
+        sw: {
+          gold: "hsl(var(--sw-gold))",
+          "gold-dim": "hsl(var(--sw-gold-dim))",
+          blue: "hsl(var(--sw-blue))",
+          red: "hsl(var(--sw-red))",
+          space: "hsl(var(--sw-space))",
         },
         dark: {
           surface: "hsl(var(--dark-surface))",
