@@ -70,9 +70,9 @@
 
 @layer components {
   .nav-link {
-    @apply text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-semibold tracking-wider uppercase;
+    @apply text-muted-foreground hover:text-primary transition-colors duration-300 font-semibold tracking-wider uppercase;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.55rem;
   }
 
   .nav-link-active {
@@ -94,9 +94,9 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-foreground mb-8 tracking-wider uppercase;
+    @apply text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-6 tracking-wider uppercase;
     font-family: 'Orbitron', sans-serif;
-    text-shadow: 0 0 20px hsl(45 100% 50% / 0.15);
+    text-shadow: 0 0 20px hsl(200 100% 55% / 0.15);
   }
 
   .glow-text {
