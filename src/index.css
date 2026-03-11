@@ -111,7 +111,7 @@
   }
 
   .hero-gradient {
-    background: radial-gradient(ellipse at top, hsl(45 100% 50% / 0.08) 0%, transparent 50%);
+    background: radial-gradient(ellipse at top, hsl(200 100% 55% / 0.08) 0%, transparent 50%);
   }
 
   .logo-text {
