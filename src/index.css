@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,46 +6,49 @@
 
 @layer base {
   :root {
-    --background: 240 10% 4%;
-    --foreground: 0 0% 95%;
+    --background: 230 15% 3%;
+    --foreground: 45 10% 90%;
 
-    --card: 240 10% 6%;
-    --card-foreground: 0 0% 95%;
+    --card: 230 15% 6%;
+    --card-foreground: 45 10% 90%;
 
-    --popover: 240 10% 6%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 230 15% 6%;
+    --popover-foreground: 45 10% 90%;
 
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 45 100% 50%;
+    --primary-foreground: 230 15% 5%;
 
-    --secondary: 240 10% 12%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 230 15% 10%;
+    --secondary-foreground: 45 10% 90%;
 
-    --muted: 240 10% 15%;
-    --muted-foreground: 240 5% 55%;
+    --muted: 230 12% 14%;
+    --muted-foreground: 45 5% 50%;
 
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 230 15% 5%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 10% 18%;
-    --input: 240 10% 18%;
-    --ring: 262 83% 58%;
+    --border: 45 20% 15%;
+    --input: 230 15% 15%;
+    --ring: 45 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    /* Custom tokens */
-    --purple-glow: 262 83% 58%;
-    --purple-muted: 262 40% 35%;
-    --dark-surface: 240 10% 8%;
-    --text-dim: 240 5% 45%;
+    /* Star Wars custom tokens */
+    --sw-gold: 45 100% 50%;
+    --sw-gold-dim: 45 60% 35%;
+    --sw-blue: 210 100% 60%;
+    --sw-red: 0 85% 55%;
+    --sw-space: 230 15% 5%;
+    --dark-surface: 230 15% 7%;
+    --text-dim: 45 5% 40%;
   }
 
   .dark {
-    --background: 240 10% 4%;
-    --foreground: 0 0% 95%;
+    --background: 230 15% 3%;
+    --foreground: 45 10% 90%;
   }
 }
 
@@ -59,47 +62,64 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.02em;
   }
 }
 
 @layer components {
   .nav-link {
-    @apply text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium;
+    @apply text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-semibold tracking-wider uppercase;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
   }
 
   .nav-link-active {
     @apply text-primary;
+    text-shadow: 0 0 10px hsl(45 100% 50% / 0.6);
   }
 
   .skill-badge {
-    @apply px-3 py-1.5 bg-secondary border border-border rounded-md text-xs font-medium text-muted-foreground hover:border-primary hover:text-primary transition-all duration-300;
+    @apply px-3 py-1.5 bg-secondary border border-border rounded text-xs font-semibold text-muted-foreground hover:border-primary hover:text-primary transition-all duration-300 uppercase tracking-wider;
+    font-family: 'Share Tech Mono', monospace;
   }
 
   .project-card {
-    @apply bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(155,135,245,0.1)];
+    @apply bg-card border border-border rounded p-6 hover:border-primary/50 transition-all duration-500;
+    box-shadow: 0 0 0 rgba(255, 200, 0, 0);
+  }
+  .project-card:hover {
+    box-shadow: 0 0 30px rgba(255, 200, 0, 0.08), inset 0 0 30px rgba(255, 200, 0, 0.02);
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-foreground mb-8;
+    @apply text-3xl md:text-4xl font-bold text-foreground mb-8 tracking-wider uppercase;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 20px hsl(45 100% 50% / 0.15);
   }
 
   .glow-text {
-    @apply text-primary drop-shadow-[0_0_20px_hsl(var(--primary)/0.5)];
+    @apply text-primary;
+    text-shadow: 0 0 20px hsl(45 100% 50% / 0.6), 0 0 40px hsl(45 100% 50% / 0.3);
   }
 
   .timeline-dot {
-    @apply w-12 h-12 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.4)];
+    @apply w-12 h-12 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground;
+    box-shadow: 0 0 20px hsl(45 100% 50% / 0.4), 0 0 40px hsl(45 100% 50% / 0.15);
+    font-family: 'Orbitron', sans-serif;
   }
 
   .hero-gradient {
-    background: radial-gradient(ellipse at top, hsl(var(--primary) / 0.15) 0%, transparent 50%);
+    background: radial-gradient(ellipse at top, hsl(45 100% 50% / 0.08) 0%, transparent 50%);
   }
 
   .logo-text {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
+    font-family: 'Orbitron', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
   }
 }
 
@@ -122,141 +142,108 @@
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 @keyframes pulse-glow {
   0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+    box-shadow: 0 0 20px hsl(45 100% 50% / 0.4);
   }
   50% {
     opacity: 0.8;
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+    box-shadow: 0 0 40px hsl(45 100% 50% / 0.6);
   }
 }
 
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slide-in {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes orb-float-1 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -30px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
 }
 
 @keyframes orb-float-2 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(-40px, 20px) scale(1.15);
-  }
-  66% {
-    transform: translate(30px, -30px) scale(0.85);
-  }
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 20px) scale(1.15); }
+  66% { transform: translate(30px, -30px) scale(0.85); }
 }
 
 @keyframes orb-float-3 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(20px, 40px) scale(1.2);
-  }
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, 40px) scale(1.2); }
 }
 
 @keyframes shooting-star {
-  0% {
-    transform: translateX(0) translateY(0) rotate(-45deg);
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(300px) translateY(300px) rotate(-45deg);
-    opacity: 0;
-  }
+  0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translateX(300px) translateY(300px) rotate(-45deg); opacity: 0; }
 }
 
-.animate-orb-1 {
-  animation: orb-float-1 20s ease-in-out infinite;
+@keyframes lightsaber-pulse {
+  0%, 100% { opacity: 0.6; box-shadow: 0 0 10px hsl(45 100% 50% / 0.3); }
+  50% { opacity: 1; box-shadow: 0 0 25px hsl(45 100% 50% / 0.6); }
 }
 
-.animate-orb-2 {
-  animation: orb-float-2 25s ease-in-out infinite;
-}
-
-.animate-orb-3 {
-  animation: orb-float-3 18s ease-in-out infinite;
-}
+.animate-orb-1 { animation: orb-float-1 20s ease-in-out infinite; }
+.animate-orb-2 { animation: orb-float-2 25s ease-in-out infinite; }
+.animate-orb-3 { animation: orb-float-3 18s ease-in-out infinite; }
 
 .shooting-star {
   position: absolute;
   width: 100px;
   height: 2px;
-  background: linear-gradient(90deg, hsl(var(--primary)), transparent);
+  background: linear-gradient(90deg, hsl(45 100% 50%), transparent);
   border-radius: 50%;
   opacity: 0;
 }
 
 .shooting-star-1 {
-  top: 20%;
-  left: 10%;
+  top: 20%; left: 10%;
   animation: shooting-star 6s linear infinite;
   animation-delay: 0s;
 }
-
 .shooting-star-2 {
-  top: 40%;
-  left: 30%;
+  top: 40%; left: 30%;
   animation: shooting-star 8s linear infinite;
   animation-delay: 2s;
 }
-
 .shooting-star-3 {
-  top: 15%;
-  left: 60%;
+  top: 15%; left: 60%;
   animation: shooting-star 7s linear infinite;
   animation-delay: 4s;
 }
 
-/* Video background overlay */
+/* Video background overlay - dark space feel */
 .video-overlay {
   background: linear-gradient(
     to bottom,
-    hsl(var(--background) / 0.55) 0%,
-    hsl(var(--background) / 0.8) 100%
+    hsl(230 15% 3% / 0.45) 0%,
+    hsl(230 15% 3% / 0.75) 100%
   );
+}
+
+/* Star Wars styled scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(230 15% 5%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(45 100% 50% / 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(45 100% 50% / 0.5);
 }
