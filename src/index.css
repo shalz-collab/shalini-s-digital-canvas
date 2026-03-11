@@ -191,8 +191,8 @@
 }
 
 @keyframes lightsaber-pulse {
-  0%, 100% { opacity: 0.6; box-shadow: 0 0 10px hsl(45 100% 50% / 0.3); }
-  50% { opacity: 1; box-shadow: 0 0 25px hsl(45 100% 50% / 0.6); }
+  0%, 100% { opacity: 0.6; box-shadow: 0 0 10px hsl(200 100% 55% / 0.3); }
+  50% { opacity: 1; box-shadow: 0 0 25px hsl(200 100% 55% / 0.6); }
 }
 
 .animate-orb-1 { animation: orb-float-1 20s ease-in-out infinite; }
