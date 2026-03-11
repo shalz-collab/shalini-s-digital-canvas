@@ -106,7 +106,7 @@
 
   .timeline-dot {
     @apply w-12 h-12 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground;
-    box-shadow: 0 0 20px hsl(45 100% 50% / 0.4), 0 0 40px hsl(45 100% 50% / 0.15);
+    box-shadow: 0 0 20px hsl(200 100% 55% / 0.4), 0 0 40px hsl(200 100% 55% / 0.15);
     font-family: 'Orbitron', sans-serif;
   }
 
