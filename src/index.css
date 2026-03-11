@@ -70,9 +70,9 @@
 
 @layer components {
   .nav-link {
-    @apply text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-semibold tracking-wider uppercase;
+    @apply text-muted-foreground hover:text-primary transition-colors duration-300 font-semibold tracking-wider uppercase;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.55rem;
   }
 
   .nav-link-active {
