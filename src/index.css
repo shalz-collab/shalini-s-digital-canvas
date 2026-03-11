@@ -203,7 +203,7 @@
   position: absolute;
   width: 100px;
   height: 2px;
-  background: linear-gradient(90deg, hsl(45 100% 50%), transparent);
+  background: linear-gradient(90deg, hsl(200 100% 55%), transparent);
   border-radius: 50%;
   opacity: 0;
 }
