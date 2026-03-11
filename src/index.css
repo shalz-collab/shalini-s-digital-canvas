@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 230 15% 3%;
-    --foreground: 45 10% 90%;
+    --background: 220 20% 3%;
+    --foreground: 210 20% 90%;
 
-    --card: 230 15% 6%;
-    --card-foreground: 45 10% 90%;
+    --card: 220 25% 7%;
+    --card-foreground: 210 20% 90%;
 
-    --popover: 230 15% 6%;
-    --popover-foreground: 45 10% 90%;
+    --popover: 220 25% 7%;
+    --popover-foreground: 210 20% 90%;
 
-    --primary: 45 100% 50%;
-    --primary-foreground: 230 15% 5%;
+    --primary: 200 100% 55%;
+    --primary-foreground: 220 20% 3%;
 
-    --secondary: 230 15% 10%;
-    --secondary-foreground: 45 10% 90%;
+    --secondary: 220 20% 10%;
+    --secondary-foreground: 210 20% 90%;
 
-    --muted: 230 12% 14%;
-    --muted-foreground: 45 5% 50%;
+    --muted: 220 18% 14%;
+    --muted-foreground: 210 10% 50%;
 
-    --accent: 45 100% 50%;
-    --accent-foreground: 230 15% 5%;
+    --accent: 260 80% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 45 20% 15%;
-    --input: 230 15% 15%;
-    --ring: 45 100% 50%;
+    --border: 210 20% 15%;
+    --input: 220 20% 15%;
+    --ring: 200 100% 55%;
 
     --radius: 0.25rem;
 
     /* Star Wars custom tokens */
-    --sw-gold: 45 100% 50%;
-    --sw-gold-dim: 45 60% 35%;
-    --sw-blue: 210 100% 60%;
+    --sw-cyan: 200 100% 55%;
+    --sw-cyan-dim: 200 50% 30%;
+    --sw-purple: 260 80% 60%;
     --sw-red: 0 85% 55%;
-    --sw-space: 230 15% 5%;
-    --dark-surface: 230 15% 7%;
-    --text-dim: 45 5% 40%;
+    --sw-space: 220 20% 5%;
+    --dark-surface: 220 20% 7%;
+    --text-dim: 210 10% 40%;
   }
 
   .dark {
