@@ -47,8 +47,8 @@
   }
 
   .dark {
-    --background: 230 15% 3%;
-    --foreground: 45 10% 90%;
+    --background: 220 20% 3%;
+    --foreground: 210 20% 90%;
   }
 }
 

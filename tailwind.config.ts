@@ -53,9 +53,9 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         sw: {
-          gold: "hsl(var(--sw-gold))",
-          "gold-dim": "hsl(var(--sw-gold-dim))",
-          blue: "hsl(var(--sw-blue))",
+          cyan: "hsl(var(--sw-cyan))",
+          "cyan-dim": "hsl(var(--sw-cyan-dim))",
+          purple: "hsl(var(--sw-purple))",
           red: "hsl(var(--sw-red))",
           space: "hsl(var(--sw-space))",
         },
