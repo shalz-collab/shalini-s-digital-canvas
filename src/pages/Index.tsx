@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Github, Linkedin, ExternalLink, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import TechStack from "@/components/TechStack";
 import ProjectCard from "@/components/ProjectCard";
 import TypewriterText from "@/components/TypewriterText";
+import OpeningCrawl from "@/components/OpeningCrawl";
 import projectHomomorphic from "@/assets/project-homomorphic.jpg";
 import projectMinecraft from "@/assets/project-minecraft.jpg";
 import projectMentalHealth from "@/assets/project-mental-health.jpg";
@@ -65,34 +67,39 @@ const typewriterTexts = [
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero Section with Opening Crawl */}
       <section
         id="home"
-        className="min-h-[calc(100vh-3.5rem)] flex items-center justify-center hero-gradient"
+        className="min-h-[calc(100vh-3.5rem)] flex items-center justify-center hero-gradient relative overflow-hidden"
       >
-        <div className="container mx-auto px-4 sm:px-6 text-center">
-          <ScrollReveal>
-            <p className="text-primary text-[10px] sm:text-xs font-display tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-3 opacity-70">
-              ★ A Long Time Ago in a Galaxy Far, Far Away... ★
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-3 font-display tracking-wider uppercase">
-              Hi, I'm <span className="glow-text">Shalini MK</span>
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={0.15}>
+        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
+          <OpeningCrawl />
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.6, duration: 0.6 }}
+          >
             <div className="text-sm sm:text-base md:text-lg text-primary font-mono mb-3 h-6 sm:h-7">
               <TypewriterText texts={typewriterTexts} />
             </div>
-          </ScrollReveal>
-          <ScrollReveal delay={0.2}>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.0, duration: 0.5 }}
+          >
             <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-lg mx-auto mb-5 font-mono">
               "Building the full picture — frontend, backend, and beyond."
             </p>
-          </ScrollReveal>
+          </motion.div>
 
-          <ScrollReveal delay={0.3}>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.3, duration: 0.5 }}
+          >
             <div className="flex items-center justify-center gap-2 sm:gap-3 mb-6 flex-wrap">
               <Link
                 to="/about"
@@ -115,9 +122,13 @@ const Index = () => {
                 Nebula Rush
               </Link>
             </div>
-          </ScrollReveal>
+          </motion.div>
 
-          <ScrollReveal delay={0.4}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.6, duration: 0.5 }}
+          >
             <div className="flex items-center justify-center gap-3">
               <a href="https://github.com/shalz-collab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github size={16} />
@@ -126,7 +137,7 @@ const Index = () => {
                 <Linkedin size={16} />
               </a>
             </div>
-          </ScrollReveal>
+          </motion.div>
         </div>
       </section>
 
@@ -134,27 +145,22 @@ const Index = () => {
       <section className="py-8 sm:py-10 border-t border-border/50">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-            <ScrollReveal delay={0.1}>
-              <p className="text-2xl sm:text-3xl font-bold text-primary mb-0.5 font-display">6</p>
-              <p className="text-muted-foreground text-[10px] uppercase tracking-wider">Projects Completed</p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <p className="text-2xl sm:text-3xl font-bold text-primary mb-0.5 font-display">8</p>
-              <p className="text-muted-foreground text-[10px] uppercase tracking-wider">Technologies</p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.3}>
-              <p className="text-2xl sm:text-3xl font-bold text-primary mb-0.5 font-display">∞</p>
-              <p className="text-muted-foreground text-[10px] uppercase tracking-wider">Passion for Code</p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.4}>
-              <p className="text-2xl sm:text-3xl font-bold text-primary mb-0.5 font-display">1</p>
-              <p className="text-muted-foreground text-[10px] uppercase tracking-wider">Upcoming AI Project</p>
-            </ScrollReveal>
+            {[
+              { val: "6", label: "Missions Complete" },
+              { val: "8", label: "Weapons Mastered" },
+              { val: "∞", label: "Force Level" },
+              { val: "1", label: "Incoming Mission" },
+            ].map((stat, i) => (
+              <ScrollReveal key={stat.label} delay={i * 0.1}>
+                <p className="text-2xl sm:text-3xl font-bold text-primary mb-0.5 font-display">{stat.val}</p>
+                <p className="text-muted-foreground text-[10px] uppercase tracking-wider font-display">{stat.label}</p>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Languages Section */}
+      {/* Arsenal Section */}
       <section id="languages" className="py-8 sm:py-10 border-t border-border/50">
         <div className="container mx-auto px-4 sm:px-6">
           <ScrollReveal>
@@ -162,8 +168,8 @@ const Index = () => {
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-1 font-display tracking-wider uppercase">
                 Arsenal & Tools
               </h2>
-              <p className="text-muted-foreground text-[10px] max-w-md mx-auto uppercase tracking-wider">
-                Technologies I wield
+              <p className="text-muted-foreground text-[10px] max-w-md mx-auto uppercase tracking-wider font-display">
+                Weapons in my galactic toolkit
               </p>
             </div>
           </ScrollReveal>
@@ -171,37 +177,43 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-10 sm:py-14 border-t border-border/50">
+      {/* Featured Missions */}
+      <section id="projects" className="py-10 sm:py-14 border-t border-border/50 relative">
+        {/* Section decorative elements */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+        
         <div className="container mx-auto px-4 sm:px-6">
           <ScrollReveal>
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-1 font-display tracking-wider uppercase">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  <span className="text-[8px] text-primary/60 font-display tracking-[0.3em] uppercase">
+                    Mission Log
+                  </span>
+                </div>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground font-display tracking-wider uppercase">
                   Featured Missions
                 </h2>
-                <p className="text-muted-foreground text-xs">
-                  A selection of my recent work
-                </p>
               </div>
-              <Link to="/projects" className="hidden md:inline-flex items-center gap-1.5 text-primary text-[10px] hover:underline font-display tracking-wider uppercase">
+              <Link to="/projects" className="hidden md:inline-flex items-center gap-1.5 text-primary text-[10px] hover:underline font-display tracking-wider uppercase border border-primary/20 px-3 py-1.5 rounded hover:bg-primary/5 transition-all">
                 View All
                 <ExternalLink size={12} />
               </Link>
             </div>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {projects.slice(0, 6).map((project, index) => (
               <ScrollReveal key={project.title} delay={index * 0.08}>
-                <ProjectCard {...project} />
+                <ProjectCard {...project} index={index} />
               </ScrollReveal>
             ))}
           </div>
 
           <ScrollReveal delay={0.3}>
             <div className="mt-6 text-center md:hidden">
-              <Link to="/projects" className="inline-flex items-center gap-1.5 text-primary text-[10px] hover:underline font-display tracking-wider uppercase">
+              <Link to="/projects" className="inline-flex items-center gap-1.5 text-primary text-[10px] font-display tracking-wider uppercase border border-primary/20 px-3 py-1.5 rounded hover:bg-primary/5 transition-all">
                 View All Missions
                 <ExternalLink size={12} />
               </Link>
@@ -211,13 +223,17 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-10 sm:py-14 border-t border-border/50">
+      <section className="py-10 sm:py-14 border-t border-border/50 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <ScrollReveal>
+            <span className="text-[8px] text-primary/50 font-display tracking-[0.3em] uppercase block mb-3">
+              Transmission Open
+            </span>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 font-display tracking-wider uppercase">
               Join the Alliance
             </h2>
-            <p className="text-muted-foreground text-xs max-w-md mx-auto mb-5">
+            <p className="text-muted-foreground text-xs max-w-md mx-auto mb-5 font-mono">
               Have a project in mind? Let's build something legendary together.
             </p>
             <div className="flex items-center justify-center gap-3 flex-wrap">
